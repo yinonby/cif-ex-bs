@@ -1,2 +1,1 @@
-# cif-ex-bs
-A travel booking system example
+# codinginfun booking-system exercise
