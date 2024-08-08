@@ -2,9 +2,9 @@
 
 #### Instructions
 - Implement the files in the order below. Each file contains one or more tasks, each task starting with the comment: __********** TASK **********__.
-- To navigate to a file, click on the Explorer button on the left panel of VS Code for Web (the button with 2 rectangles), and click on the file you wish to edit.
-- Make sure you commit and push your changes from time to time, so they are not lost. To commit and push, click on the Source Control button on the left panel of VS Code for Web (the one that has 3 small circles and 2 lines) - if you have uncommitted changes, this button will have a a blue circle badge indicator with a number indicating the number of files with changes.
-- After each commit, you can test your changes using the testing section in the main exercise website (codinginfun.com).
+- The goal of this exercise is to make sure you understand all the principles we have learned throughout the course.
+- Make sure to test your changes every time you commit them (as instructed in the exercise website), and don't proceed to the
+next file before all tests pass for the class or interface you are working on.
 
 ###### Files that are already implemented
 Before you start, go over the following files, which have already been implemented:
