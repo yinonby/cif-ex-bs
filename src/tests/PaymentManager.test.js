@@ -1,5 +1,5 @@
 
-import BookingSystemFactory from "../app/logic/BookingSystemFactory";
+import PaymentManagerFactory from "../app/logic/payments/payment-operations/managers/PaymentManagerFactory";
 import Customer from "../app/logic/persons/Customer";
 import Book from "../app/logic/products/Book";
 import { invalidCC, validCC1 } from "./TestConstants";
@@ -12,7 +12,7 @@ export function test() {
 
     describe("#makePayment()", function () {
       const paymentManager =
-        BookingSystemFactory.buildPaymentManager();
+        PaymentManagerFactory.buildPaymentManager();
 
       it("should make a payment", function () {
         const customer = new Customer("Lady", "Gaga", "ladygaga@gmail.com");
@@ -36,8 +36,7 @@ export function test() {
 
 
     describe("#cancelPayment()", function () {
-      const paymentManager =
-        BookingSystemFactory.buildPaymentManager();
+      const paymentManager = PaymentManagerFactory.buildPaymentManager();
 
       it("should cancel a payment", function () {
         const customer = new Customer("Lady", "Gaga", "ladygaga@gmail.com");

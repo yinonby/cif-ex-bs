@@ -30,6 +30,7 @@ Before you start, go over the following files, which have already been implement
 - src/app/logic/payments/external-adapters/stripe/StripeAPI.ts
 - src/app/logic/payments/payment-operations/PaymentOperationsProvider.ts
 - src/app/logic/payments/payment-operations/managers/PaymentManager.ts
+- src/app/logic/payments/payment-operations/managers/PaymentManagerFactory.ts
 - src/app/logic/BookingSystem.ts
 - src/app/logic/BookingSystemFactory.ts
 
