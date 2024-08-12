@@ -13,6 +13,11 @@ export function test() {
     describe("#charge()", function () {
       const stripeApi = new StripeAPI();
 
+      it("should be implemented", function () {
+        expect(typeof stripeApi.chargeCard).to.equal("function",
+          "StripeApi.chargeCard() is not implemented");
+      });
+
       it("should charge a card", function () {
         const customer = new Customer("Lady", "Gaga", "ladygaga@gmail.com");
         const book = new Book("Harry Potter", 12, "EUR");
@@ -35,6 +40,11 @@ export function test() {
 
     describe("#refund()", function () {
       const stripeApi = new StripeAPI();
+
+      it("should be implemented", function () {
+        expect(typeof stripeApi.refund).to.equal("function",
+          "StripeApi.refund() is not implemented");
+      });
 
       it("should make a refund", function () {
         const customer = new Customer("Lady", "Gaga", "ladygaga@gmail.com");

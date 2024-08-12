@@ -11,12 +11,22 @@ export function test() {
     const person = new Person(firstName, lastName);
 
     describe("#getFirstName()", function () {
+      it("should be implemented", function () {
+        expect(typeof person.getFirstName).to.equal("function",
+          "Person.getFirstName() is not implemented");
+      });
+     
       it("should return first name", function () {
         expect(person.getFirstName()).to.equal(firstName);
       });
     });
 
     describe("#getLastName()", function () {
+      it("should be implemented", function () {
+        expect(typeof person.getLastName).to.equal("function",
+          "Person.getLastName() is not implemented");
+      });
+     
       it("should return last name", function () {
         expect(person.getLastName()).to.equal(lastName);
       });

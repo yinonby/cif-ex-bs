@@ -31,36 +31,66 @@ export function test() {
     const order = new Order(orderId, customer1, products);
 
     describe("#getOrderId()", function () {
+      it("should be implemented", function () {
+        expect(typeof order.getOrderId).to.equal("function",
+          "Order.getOrderId() is not implemented");
+      });
+
       it("should return order id", function () {
         expect(order.getOrderId()).to.equal(orderId);
       });
     });
 
     describe("#getCustomer()", function () {
+      it("should be implemented", function () {
+        expect(typeof order.getCustomer).to.equal("function",
+          "Order.getCustomer() is not implemented");
+      });
+
       it("should return customer", function () {
         expect(order.getCustomer()).to.equal(customer1);
       });
     });
 
     describe("#getRate()", function () {
+      it("should be implemented", function () {
+        expect(typeof order.getRate).to.equal("function",
+          "Order.getRate() is not implemented");
+      });
+
       it("should return total rate", function () {
         expect(order.getRate()).to.equal(book1_eur.getRate() + book2_eur.getRate());
       });
     });
 
     describe("#getCurrencyCode()", function () {
+      it("should be implemented", function () {
+        expect(typeof order.getCurrencyCode).to.equal("function",
+          "Order.getCurrencyCode() is not implemented");
+      });
+
       it("should return currency code", function () {
         expect(order.getCurrencyCode()).to.equal(book1_eur.getCurrencyCode());
       });
     });
 
     describe("#getPaymentId()", function () {
+      it("should be implemented", function () {
+        expect(typeof order.getPaymentId).to.equal("function",
+          "Order.getPaymentId() is not implemented");
+      });
+
       it("should return payment id", function () {
         expect(order.getPaymentId()).to.equal("");
       });
     });
 
     describe("#setPaymentId()", function () {
+      it("should be implemented", function () {
+        expect(typeof order.setPaymentId).to.equal("function",
+          "Order.setPaymentId() is not implemented");
+      });
+
       it("should set payment id", function () {
         const paymentId = "fake-payment-id";
         order.setPaymentId(paymentId);

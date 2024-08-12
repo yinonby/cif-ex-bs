@@ -1,5 +1,4 @@
 
-import PaymentManager from "../app/logic/payments/payment-operations/managers/PaymentManager";
 import PaymentManagerFactory from "../app/logic/payments/payment-operations/managers/PaymentManagerFactory";
 import Customer from "../app/logic/persons/Customer";
 import Book from "../app/logic/products/Book";
@@ -13,16 +12,13 @@ export function test() {
 
     describe("#makePayment()", function () {
       let paymentManager = null;
+      try {
+        paymentManager = PaymentManagerFactory.buildPaymentManager();
+      } catch (err) {}
 
-      it("should build a PaymentManager", function () {
-        try {
-          paymentManager = PaymentManagerFactory.buildPaymentManager();
-        } catch (err) {
-          console.error(err)
-        }
-
-        expect(paymentManager instanceof PaymentManager,
-          "PaymentManagerFactory.buildPaymentManager() should construct a PaymentManager object").to.be.true;
+      it("should be implemented", function () {
+        expect(typeof paymentManager.makePayment).to.equal("function",
+          "PaymentManager.makePayment() is not implemented");
       });
 
       it("should make a payment", function () {
@@ -48,18 +44,15 @@ export function test() {
 
     describe("#cancelPayment()", function () {
       let paymentManager = null;
+      try {
+        paymentManager = PaymentManagerFactory.buildPaymentManager();
+      } catch (err) {}
 
-      it("should build a PaymentManager", function () {
-        try {
-          paymentManager = PaymentManagerFactory.buildPaymentManager();
-        } catch (err) {
-          console.error(err)
-        }
-
-        expect(paymentManager instanceof PaymentManager,
-          "PaymentManagerFactory.buildPaymentManager() should construct a PaymentManager object").to.be.true;
+      it("should be implemented", function () {
+        expect(typeof paymentManager.cancelPayment).to.equal("function",
+          "PaymentManager.cancelPayment() is not implemented");
       });
-
+     
       it("should cancel a payment", function () {
         const customer = new Customer("Lady", "Gaga", "ladygaga@gmail.com");
         const payable = new Book("Harry Potter", 12, "EUR");

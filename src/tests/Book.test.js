@@ -12,18 +12,33 @@ export function test() {
     const book = new Book(bookName, bookPrice, currencyCode);
 
     describe("#getBookName()", function () {
+      it("should be implemented", function () {
+        expect(typeof book.getBookName).to.equal("function",
+          "Book.getBookName() is not implemented");
+      });
+
       it("should return book name", function () {
         expect(book.getBookName()).to.equal(bookName);
       });
     });
 
     describe("#getRate()", function () {
+      it("should be implemented", function () {
+        expect(typeof book.getRate).to.equal("function",
+          "Book.getRate() is not implemented");
+      });
+
       it("should return price", function () {
         expect(book.getRate()).to.equal(bookPrice);
       });
     });
 
     describe("#getCurrencyCode()", function () {
+      it("should be implemented", function () {
+        expect(typeof book.getCurrencyCode).to.equal("function",
+          "Book.getCurrencyCode() is not implemented");
+      });
+
       it("should return currency code", function () {
         expect(book.getCurrencyCode()).to.equal(currencyCode);
       });

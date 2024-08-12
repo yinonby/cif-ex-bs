@@ -1,5 +1,4 @@
 
-import BookingSystem from "../app/logic/BookingSystem";
 import BookingSystemFactory from "../app/logic/BookingSystemFactory";
 import { invalidCC, validCC1, validCC2 } from "./TestConstants";
 const { chai } = window;
@@ -11,16 +10,13 @@ export function test() {
 
     describe("#addHotelReservation()", function () {
       let bookingSystem = null;
+      try {
+        bookingSystem = BookingSystemFactory.buildBookingSystem();
+      } catch (err) {}
 
-      it("should build a PaymentManager", function () {
-        try {
-          bookingSystem = BookingSystemFactory.buildBookingSystem();
-        } catch (err) {
-          console.error(err)
-        }
-
-        expect(bookingSystem instanceof BookingSystem,
-          "BookingSystemFactory.buildBookingSystem() should construct a BookingSystem object").to.be.true;
+      it("should be implemented", function () {
+        expect(typeof bookingSystem.addHotelReservation).to.equal("function",
+          "BookingSystem.addHotelReservation() is not implemented");
       });
 
       it("should create a hotel reservation", function () {
@@ -51,16 +47,13 @@ export function test() {
 
     describe("#cancelReservation()", function () {
       let bookingSystem = null;
+      try {
+        bookingSystem = BookingSystemFactory.buildBookingSystem();
+      } catch (err) {}
 
-      it("should build a PaymentManager", function () {
-        try {
-          bookingSystem = BookingSystemFactory.buildBookingSystem();
-        } catch (err) {
-          console.error(err)
-        }
-
-        expect(bookingSystem instanceof BookingSystem,
-          "BookingSystemFactory.buildBookingSystem() should construct a BookingSystem object").to.be.true;
+      it("should be implemented", function () {
+        expect(typeof bookingSystem.cancelReservation).to.equal("function",
+          "BookingSystem.cancelReservation() is not implemented");
       });
       
       it("should cancel a hotel reservation", function () {

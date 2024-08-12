@@ -19,36 +19,66 @@ export function test() {
       destinationAirportCode, flightRate, currencyCode);
 
     describe("#getFixedDate()", function () {
+      it("should be implemented", function () {
+        expect(typeof flightReservation.getFixedDate).to.equal("function",
+          "FlightReservation.getFixedDate() is not implemented");
+      });
+
       it("should return flight date", function () {
         expect(flightReservation.getFixedDate()).to.equal(flightDate);
       });
     });
 
     describe("#getRate()", function () {
+      it("should be implemented", function () {
+        expect(typeof flightReservation.getRate).to.equal("function",
+          "FlightReservation.getRate() is not implemented");
+      });
+
       it("should return rate", function () {
         expect(flightReservation.getRate()).to.equal(flightRate);
       });
     });
 
     describe("#getCurrencyCode()", function () {
+      it("should be implemented", function () {
+        expect(typeof flightReservation.getCurrencyCode).to.equal("function",
+          "FlightReservation.getCurrencyCode() is not implemented");
+      });
+
       it("should return currency code", function () {
         expect(flightReservation.getCurrencyCode()).to.equal(currencyCode);
       });
     });
 
     describe("#getOriginAirportCode()", function () {
+      it("should be implemented", function () {
+        expect(typeof flightReservation.getOriginAirportCode).to.equal("function",
+          "FlightReservation.getOriginAirportCode() is not implemented");
+      });
+
       it("should return activity name", function () {
         expect(flightReservation.getOriginAirportCode()).to.equal(originAirportCode);
       });
     });
 
     describe("#getDestinationAirportCode()", function () {
+      it("should be implemented", function () {
+        expect(typeof flightReservation.getDestinationAirportCode).to.equal("function",
+          "FlightReservation.getDestinationAirportCode() is not implemented");
+      });
+
       it("should return activity name", function () {
         expect(flightReservation.getDestinationAirportCode()).to.equal(destinationAirportCode);
       });
     });
 
     describe("#getReservationSummary()", function () {
+      it("should be implemented", function () {
+        expect(typeof flightReservation.getReservationSummary).to.equal("function",
+          "FlightReservation.getReservationSummary() is not implemented");
+      });
+
       const expectedSummary = "Flight from " + originAirportCode +
       " to " + destinationAirportCode +
       ", on " + flightDate;

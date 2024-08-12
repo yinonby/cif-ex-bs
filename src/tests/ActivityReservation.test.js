@@ -16,31 +16,57 @@ export function test() {
     const activityReservation = new ActivityReservation(
       reservationId, customer, activityName, activityDate, activityRate, currencyCode);
 
-    describe("#getStartDate()", function () {
+    describe("#getFixedDate()", function () {
+      it("should be implemented", function () {
+        expect(typeof activityReservation.getFixedDate).to.equal("function",
+          "ActivityReservation.getFixedDate() is not implemented");
+      });
+
       it("should return activity date", function () {
-        expect(activityReservation.getFixedDate()).to.equal(activityDate);
+        expect(activityReservation.getFixedDate()).to.equal(activityDate,
+          "ActivityReservation.getFixedDate() should return the activity date");
       });
     });
 
     describe("#getRate()", function () {
+      it("should be implemented", function () {
+        expect(typeof activityReservation.getRate).to.equal("function",
+          "ActivityReservation.getRate() is not implemented");
+      });
+
       it("should return rate", function () {
         expect(activityReservation.getRate()).to.equal(activityRate);
       });
     });
 
     describe("#getCurrencyCode()", function () {
+      it("should be implemented", function () {
+        expect(typeof activityReservation.getCurrencyCode).to.equal("function",
+          "ActivityReservation.getCurrencyCode() is not implemented");
+      });
+
       it("should return currency code", function () {
         expect(activityReservation.getCurrencyCode()).to.equal(currencyCode);
       });
     });
 
     describe("#getActivityName()", function () {
+      it("should be implemented", function () {
+        expect(typeof activityReservation.getActivityName).to.equal("function",
+          "ActivityReservation.getActivityName() is not implemented");
+      });
+
       it("should return activity name", function () {
         expect(activityReservation.getActivityName()).to.equal(activityName);
       });
     });
 
     describe("#getReservationSummary()", function () {
+      it("should be implemented", function () {
+        expect(typeof activityReservation.getReservationSummary).to.equal("function",
+          "ActivityReservation.getReservationSummary() is not implemented");
+      });
+
       const expectedSummary = "Activity: " + activityName +
       " on " + activityDate;
       it("should return reservation summary", function () {

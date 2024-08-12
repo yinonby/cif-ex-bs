@@ -12,6 +12,11 @@ export function test() {
     const customer = new Customer(firstName, lastName, emailAddress);
 
     describe("#getEmailAddress()", function () {
+      it("should be implemented", function () {
+        expect(typeof customer.getEmailAddress).to.equal("function",
+          "Customer.getEmailAddress() is not implemented");
+      });
+
       it("should return email address", function () {
         expect(customer.getEmailAddress()).to.equal(emailAddress);
       });

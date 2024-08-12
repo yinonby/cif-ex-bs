@@ -19,36 +19,66 @@ export function test() {
       hotelName);
 
     describe("#getRate()", function () {
+      it("should be implemented", function () {
+        expect(typeof hotelReservation.getRate).to.equal("function",
+          "HotelReservation.getRate() is not implemented");
+      });
+
       it("should return rate", function () {
         expect(hotelReservation.getRate()).to.equal(rate);
       });
     });
 
     describe("#getCurrencyCode()", function () {
+      it("should be implemented", function () {
+        expect(typeof hotelReservation.getCurrencyCode).to.equal("function",
+          "HotelReservation.getCurrencyCode() is not implemented");
+      });
+
       it("should return currency code", function () {
         expect(hotelReservation.getCurrencyCode()).to.equal(currencyCode);
       });
     });
 
     describe("#getStartDate()", function () {
+      it("should be implemented", function () {
+        expect(typeof hotelReservation.getStartDate).to.equal("function",
+          "HotelReservation.getStartDate() is not implemented");
+      });
+
       it("should return start date", function () {
         expect(hotelReservation.getStartDate()).to.equal(startDate);
       });
     });
 
     describe("#getEndDate()", function () {
+      it("should be implemented", function () {
+        expect(typeof hotelReservation.getEndDate).to.equal("function",
+          "HotelReservation.getEndDate() is not implemented");
+      });
+
       it("should return end date", function () {
         expect(hotelReservation.getEndDate()).to.equal(endDate);
       });
     });
 
     describe("#getHotelName()", function () {
+      it("should be implemented", function () {
+        expect(typeof hotelReservation.getHotelName).to.equal("function",
+          "HotelReservation.getHotelName() is not implemented");
+      });
+
       it("should return hotel name", function () {
         expect(hotelReservation.getHotelName()).to.equal(hotelName);
       });
     });
 
     describe("#getReservationSummary()", function () {
+      it("should be implemented", function () {
+        expect(typeof hotelReservation.getReservationSummary).to.equal("function",
+          "HotelReservation.getReservationSummary() is not implemented");
+      });
+
       const expectedSummary = "Hotel: " + hotelName +
         ", check-in: " + startDate +
         ", check-out: " + endDate;
