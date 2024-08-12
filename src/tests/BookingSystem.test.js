@@ -1,4 +1,5 @@
 
+import BookingSystem from "../app/logic/BookingSystem";
 import BookingSystemFactory from "../app/logic/BookingSystemFactory";
 import { invalidCC, validCC1, validCC2 } from "./TestConstants";
 const { chai } = window;
@@ -9,7 +10,18 @@ export function test() {
   describe("Test BookingSystem", function () {
 
     describe("#addHotelReservation()", function () {
-      const bookingSystem = BookingSystemFactory.buildBookingSystem();
+      let bookingSystem = null;
+
+      it("should build a PaymentManager", function () {
+        try {
+          bookingSystem = BookingSystemFactory.buildBookingSystem();
+        } catch (err) {
+          console.error(err)
+        }
+
+        expect(bookingSystem instanceof BookingSystem,
+          "BookingSystemFactory.buildBookingSystem() should construct a BookingSystem object").to.be.true;
+      });
 
       it("should create a hotel reservation", function () {
         const reservationId = bookingSystem.addHotelReservation(
@@ -38,7 +50,18 @@ export function test() {
     });
 
     describe("#cancelReservation()", function () {
-      const bookingSystem = BookingSystemFactory.buildBookingSystem();
+      let bookingSystem = null;
+
+      it("should build a PaymentManager", function () {
+        try {
+          bookingSystem = BookingSystemFactory.buildBookingSystem();
+        } catch (err) {
+          console.error(err)
+        }
+
+        expect(bookingSystem instanceof BookingSystem,
+          "BookingSystemFactory.buildBookingSystem() should construct a BookingSystem object").to.be.true;
+      });
       
       it("should cancel a hotel reservation", function () {
         const reservationId = bookingSystem.addHotelReservation(

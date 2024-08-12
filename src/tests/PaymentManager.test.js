@@ -1,4 +1,5 @@
 
+import PaymentManager from "../app/logic/payments/payment-operations/managers/PaymentManager";
 import PaymentManagerFactory from "../app/logic/payments/payment-operations/managers/PaymentManagerFactory";
 import Customer from "../app/logic/persons/Customer";
 import Book from "../app/logic/products/Book";
@@ -11,8 +12,18 @@ export function test() {
   describe("Test PaymentManager", function () {
 
     describe("#makePayment()", function () {
-      const paymentManager =
-        PaymentManagerFactory.buildPaymentManager();
+      let paymentManager = null;
+
+      it("should build a PaymentManager", function () {
+        try {
+          paymentManager = PaymentManagerFactory.buildPaymentManager();
+        } catch (err) {
+          console.error(err)
+        }
+
+        expect(paymentManager instanceof PaymentManager,
+          "PaymentManagerFactory.buildPaymentManager() should construct a PaymentManager object").to.be.true;
+      });
 
       it("should make a payment", function () {
         const customer = new Customer("Lady", "Gaga", "ladygaga@gmail.com");
@@ -36,7 +47,18 @@ export function test() {
 
 
     describe("#cancelPayment()", function () {
-      const paymentManager = PaymentManagerFactory.buildPaymentManager();
+      let paymentManager = null;
+
+      it("should build a PaymentManager", function () {
+        try {
+          paymentManager = PaymentManagerFactory.buildPaymentManager();
+        } catch (err) {
+          console.error(err)
+        }
+
+        expect(paymentManager instanceof PaymentManager,
+          "PaymentManagerFactory.buildPaymentManager() should construct a PaymentManager object").to.be.true;
+      });
 
       it("should cancel a payment", function () {
         const customer = new Customer("Lady", "Gaga", "ladygaga@gmail.com");
