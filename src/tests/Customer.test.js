@@ -18,7 +18,8 @@ export function test() {
       });
 
       it("should return email address", function () {
-        expect(customer.getEmailAddress()).to.equal(emailAddress);
+        expect(customer.getEmailAddress()).to.equal(emailAddress,
+          "Customer.getEmailAddress() doesn't return the email address");
       });
     });
 

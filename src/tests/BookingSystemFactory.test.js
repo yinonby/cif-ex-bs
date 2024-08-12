@@ -18,7 +18,7 @@ export function test() {
         const bookingSystem = BookingSystemFactory.buildBookingSystem();
 
         expect(bookingSystem instanceof BookingSystem,
-          "BookingSystemFactory.buildBookingSystem() should construct a BookingSystem object").to.be.true;
+          "BookingSystemFactory.buildBookingSystem() doesn't return a BookingSystem object").to.be.true;
       });
     });
 

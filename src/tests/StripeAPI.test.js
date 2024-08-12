@@ -23,7 +23,8 @@ export function test() {
         const book = new Book("Harry Potter", 12, "EUR");
         const validCC = validCC1;
         const stripePaymentId = stripeApi.chargeCard(customer, book, validCC);
-        expect(stripePaymentId).to.not.equal("", "chargeCard() should return a non-empty string");
+        expect(stripePaymentId).to.not.equal("",
+          "StripeAPI.chargeCard() should return an external payment id");
       });
 
       it("should fail charging an invalid card", function () {
@@ -33,7 +34,8 @@ export function test() {
 
         expect(function() {
           stripeApi.chargeCard(customer, book, validCC);
-        }).to.throw('Error returned from Stripe!');
+        }).to.throw('Error returned from Stripe!',
+          "In case card in invalid, StripeAPI.chargeCard() should throw an error with message: 'Error returned from Stripe!'");
       });
     });
 
@@ -43,7 +45,7 @@ export function test() {
 
       it("should be implemented", function () {
         expect(typeof stripeApi.refund).to.equal("function",
-          "StripeApi.refund() is not implemented");
+          "StripeAPI.refund() is not implemented");
       });
 
       it("should make a refund", function () {
@@ -51,7 +53,8 @@ export function test() {
         const book = new Book("Harry Potter", 12, "EUR");
         const validCC = validCC1;
         const stripePaymentId = stripeApi.chargeCard(customer, book, validCC);
-        expect(stripePaymentId).to.not.equal("", "chargeCard() should return a non-empty string");
+        expect(stripePaymentId).to.not.equal("",
+          "StripeAPI.chargeCard() should return an external payment id");
 
         stripeApi.refund(stripePaymentId);
       });

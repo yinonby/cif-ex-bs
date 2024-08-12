@@ -32,7 +32,8 @@ export function test() {
       });
 
       it("should return customer", function () {
-        expect(sampleReservation.getCustomer()).to.equal(customer);
+        expect(sampleReservation.getCustomer()).to.equal(customer,
+          "Reservation.getCustomer() doesn't return the customer");
       });
     });
 
@@ -43,7 +44,8 @@ export function test() {
       });
 
       it("should return payment id", function () {
-        expect(sampleReservation.getPaymentId()).to.equal("");
+        expect(sampleReservation.getPaymentId()).to.equal("",
+          "Reservation.getPaymentId() doesn't return the payment id");
       });
     });
 
@@ -55,7 +57,8 @@ export function test() {
 
       it("should set payment id", function () {
         sampleReservation.setPaymentId(paymentId);
-        expect(sampleReservation.getPaymentId()).to.equal(paymentId);
+        expect(sampleReservation.getPaymentId()).to.equal(paymentId,
+          "Reservation.setPaymentId() doesn't set the payment id");
       });
     });
   });

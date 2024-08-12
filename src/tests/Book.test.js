@@ -18,7 +18,8 @@ export function test() {
       });
 
       it("should return book name", function () {
-        expect(book.getBookName()).to.equal(bookName);
+        expect(book.getBookName()).to.equal(bookName,
+          "Book.getBookName() doesn't return the book name");
       });
     });
 
@@ -29,7 +30,8 @@ export function test() {
       });
 
       it("should return price", function () {
-        expect(book.getRate()).to.equal(bookPrice);
+        expect(book.getRate()).to.equal(bookPrice,
+          "Book.getRate() doesn't return the book price");
       });
     });
 
@@ -40,7 +42,8 @@ export function test() {
       });
 
       it("should return currency code", function () {
-        expect(book.getCurrencyCode()).to.equal(currencyCode);
+        expect(book.getCurrencyCode()).to.equal(currencyCode,
+          "Book.getCurrencyCode() doesn't return the currency code");
       });
     });
 

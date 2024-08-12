@@ -24,7 +24,8 @@ export function test() {
           "Lady", "Gaga",
           "ladygaga@gmail.com", "Ritz Paris", "2022-10-10", "2022-10-12",
           100, "EUR", validCC1);
-        expect(reservationId).to.not.equal("", "addHotelReservation() should return a non-empty string");
+        expect(reservationId).to.not.equal("",
+          "addHotelReservation() doesn't return a reservation id");
       });
 
       it("should create another hotel reservation", function () {
@@ -32,7 +33,8 @@ export function test() {
           "Justin", "Biber",
           "justinbiber@yahoo.com", "Carlton NYC", "2022-11-02", "2022-11-05",
           130, "USD", validCC2);
-        expect(reservationId).to.not.equal("", "addHotelReservation() should return a non-empty string");
+        expect(reservationId).to.not.equal("",
+          "addHotelReservation() doesn't return a reservation id");
       });
 
       it("should fail due to invalid card", function () {
@@ -41,7 +43,8 @@ export function test() {
             "Justin", "Biber",
             "justinbiber@yahoo.com", "Carlton NYC", "2022-11-02", "2022-11-05",
             130, "USD", invalidCC);
-        }).to.throw('Error returned from Stripe!');
+        }).to.throw('Error returned from Stripe!',
+          "addHotelReservation() should throw an error with message: 'Error returned from Stripe!'");
       });
     });
 
@@ -61,7 +64,8 @@ export function test() {
           "Lady", "Gaga",
           "ladygaga@gmail.com", "Ritz Paris", "2022-10-10", "2022-10-12",
           100, "EUR", validCC1);
-        expect(reservationId).to.not.equal("", "addHotelReservation() should return a non-empty string");
+        expect(reservationId).to.not.equal("",
+          "addHotelReservation() doesn't return a reservation id");
 
         bookingSystem.cancelReservation(reservationId);
       });

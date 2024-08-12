@@ -25,7 +25,8 @@ export function test() {
       });
 
       it("should return flight date", function () {
-        expect(flightReservation.getFixedDate()).to.equal(flightDate);
+        expect(flightReservation.getFixedDate()).to.equal(flightDate,
+          "FlightReservation.getFixedDate() doesn't return the flight date");
       });
     });
 
@@ -36,7 +37,8 @@ export function test() {
       });
 
       it("should return rate", function () {
-        expect(flightReservation.getRate()).to.equal(flightRate);
+        expect(flightReservation.getRate()).to.equal(flightRate,
+          "FlightReservation.getRate() doesn't return the flight rate");
       });
     });
 
@@ -47,7 +49,8 @@ export function test() {
       });
 
       it("should return currency code", function () {
-        expect(flightReservation.getCurrencyCode()).to.equal(currencyCode);
+        expect(flightReservation.getCurrencyCode()).to.equal(currencyCode,
+          "FlightReservation.getCurrencyCode() doesn't return the currency code");
       });
     });
 
@@ -58,7 +61,8 @@ export function test() {
       });
 
       it("should return activity name", function () {
-        expect(flightReservation.getOriginAirportCode()).to.equal(originAirportCode);
+        expect(flightReservation.getOriginAirportCode()).to.equal(originAirportCode,
+          "FlightReservation.getOriginAirportCode() doesn't return the origin airport code");
       });
     });
 
@@ -69,7 +73,8 @@ export function test() {
       });
 
       it("should return activity name", function () {
-        expect(flightReservation.getDestinationAirportCode()).to.equal(destinationAirportCode);
+        expect(flightReservation.getDestinationAirportCode()).to.equal(destinationAirportCode,
+          "FlightReservation.getDestinationAirportCode() doesn't return the destination airport code");
       });
     });
 
@@ -83,7 +88,8 @@ export function test() {
       " to " + destinationAirportCode +
       ", on " + flightDate;
       it("should return reservation summary", function () {
-        expect(flightReservation.getReservationSummary()).to.equal(expectedSummary);
+        expect(flightReservation.getReservationSummary()).to.equal(expectedSummary,
+          "FlightReservation.getReservationSummary() doesn't return the correct summary");
       });
     });
   });

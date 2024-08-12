@@ -24,7 +24,7 @@ export function test() {
 
       it("should return activity date", function () {
         expect(activityReservation.getFixedDate()).to.equal(activityDate,
-          "ActivityReservation.getFixedDate() should return the activity date");
+          "ActivityReservation.getFixedDate() doesn't return the activity date");
       });
     });
 
@@ -35,7 +35,8 @@ export function test() {
       });
 
       it("should return rate", function () {
-        expect(activityReservation.getRate()).to.equal(activityRate);
+        expect(activityReservation.getRate()).to.equal(activityRate,
+        "ActivityReservation.getRate() doesn't return the activity rate");
       });
     });
 
@@ -46,7 +47,8 @@ export function test() {
       });
 
       it("should return currency code", function () {
-        expect(activityReservation.getCurrencyCode()).to.equal(currencyCode);
+        expect(activityReservation.getCurrencyCode()).to.equal(currencyCode,
+          "ActivityReservation.getCurrencyCode() doesn't return the currency code");
       });
     });
 
@@ -57,7 +59,8 @@ export function test() {
       });
 
       it("should return activity name", function () {
-        expect(activityReservation.getActivityName()).to.equal(activityName);
+        expect(activityReservation.getActivityName()).to.equal(activityName,
+          "ActivityReservation.getActivityName() doesn't return the activity name");
       });
     });
 
@@ -70,7 +73,8 @@ export function test() {
       const expectedSummary = "Activity: " + activityName +
       " on " + activityDate;
       it("should return reservation summary", function () {
-        expect(activityReservation.getReservationSummary()).to.equal(expectedSummary);
+        expect(activityReservation.getReservationSummary()).to.equal(expectedSummary,
+          "ActivityReservation.getReservationSummary() doesn't return the correct summary");
       });
     });
   });

@@ -25,7 +25,8 @@ export function test() {
       });
 
       it("should return rate", function () {
-        expect(hotelReservation.getRate()).to.equal(rate);
+        expect(hotelReservation.getRate()).to.equal(rate,
+          "HotelReservation.getRate() doesn't return the hotel rate");
       });
     });
 
@@ -36,7 +37,8 @@ export function test() {
       });
 
       it("should return currency code", function () {
-        expect(hotelReservation.getCurrencyCode()).to.equal(currencyCode);
+        expect(hotelReservation.getCurrencyCode()).to.equal(currencyCode,
+          "HotelReservation.getCurrencyCode() doesn't return the currency code");
       });
     });
 
@@ -47,7 +49,8 @@ export function test() {
       });
 
       it("should return start date", function () {
-        expect(hotelReservation.getStartDate()).to.equal(startDate);
+        expect(hotelReservation.getStartDate()).to.equal(startDate,
+          "HotelReservation.getStartDate() doesn't return the start date");
       });
     });
 
@@ -58,7 +61,8 @@ export function test() {
       });
 
       it("should return end date", function () {
-        expect(hotelReservation.getEndDate()).to.equal(endDate);
+        expect(hotelReservation.getEndDate()).to.equal(endDate,
+          "HotelReservation.getEndDate() doesn't return the end date");
       });
     });
 
@@ -69,7 +73,8 @@ export function test() {
       });
 
       it("should return hotel name", function () {
-        expect(hotelReservation.getHotelName()).to.equal(hotelName);
+        expect(hotelReservation.getHotelName()).to.equal(hotelName,
+          "HotelReservation.getHotelName() doesn't return the hotel name");
       });
     });
 
@@ -83,7 +88,8 @@ export function test() {
         ", check-in: " + startDate +
         ", check-out: " + endDate;
       it("should return reservation summary", function () {
-        expect(hotelReservation.getReservationSummary()).to.equal(expectedSummary);
+        expect(hotelReservation.getReservationSummary()).to.equal(expectedSummary,
+          "HotelReservation.getReservationSummary() doesn't return the correct summary");
       });
     });
   });

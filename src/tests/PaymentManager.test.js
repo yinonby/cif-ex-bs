@@ -27,7 +27,8 @@ export function test() {
         const validCC = validCC1;
         const paymentId = paymentManager.makePayment(customer,
           book, validCC);
-        expect(paymentId).to.not.equal("", "makePayment() should return a non-empty string");
+        expect(paymentId).to.not.equal("",
+          "PaymentManager.makePayment() doesn't return a payment id");
       });
 
       it("should fail making a payment using an invalid payment method", function () {
@@ -37,7 +38,8 @@ export function test() {
 
         expect(function() {
           paymentManager.makePayment(customer, book, validCC);
-        }).to.throw('Error returned from Stripe!');
+        }).to.throw('Error returned from Stripe!',
+          "In case payment method is invalid, PaymentManager.makePayment() should throw an error with message: 'Error returned from Stripe!'");
       });
     });
 
@@ -59,7 +61,8 @@ export function test() {
         const paymentMethod = validCC1;
         const paymentId = paymentManager.makePayment(customer,
           payable, paymentMethod);
-        expect(paymentId).to.not.equal("", "makePayment() should return a non-empty string");
+        expect(paymentId).to.not.equal("",
+          "makePayment() should return a payment id");
 
         paymentManager.cancelPayment(paymentId);
       });

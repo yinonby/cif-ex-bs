@@ -17,7 +17,8 @@ export function test() {
       });
      
       it("should return first name", function () {
-        expect(person.getFirstName()).to.equal(firstName);
+        expect(person.getFirstName()).to.equal(firstName,
+          "Person.getFirstName() doesn't return the first name");
       });
     });
 
@@ -28,7 +29,8 @@ export function test() {
       });
      
       it("should return last name", function () {
-        expect(person.getLastName()).to.equal(lastName);
+        expect(person.getLastName()).to.equal(lastName,
+          "Person.getLastName() doesn't return the last name");
       });
     });
 

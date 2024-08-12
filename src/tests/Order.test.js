@@ -14,7 +14,8 @@ export function test() {
       it("should throw error", function () {
         expect(function() {
           new Order(orderId, customer1, products)
-        }).to.throw('Must provide at least 1 product');
+        }).to.throw('Must provide at least 1 product',
+         "In case no products are given, constructor should throw an error with message: 'Must provide at least 1 product'");
       });
     });
 
@@ -23,7 +24,8 @@ export function test() {
       it("should throw error", function () {
         expect(function() {
           new Order(orderId, customer1, products)
-        }).to.throw('All currencies must match');
+        }).to.throw('All currencies must match',
+          "In case some products don't have the same currency, constructor should throw an error with message: 'All currencies must match'");
       });
     });
 
@@ -37,7 +39,8 @@ export function test() {
       });
 
       it("should return order id", function () {
-        expect(order.getOrderId()).to.equal(orderId);
+        expect(order.getOrderId()).to.equal(orderId,
+          "Order.getOrderId() doesn't return the order id");
       });
     });
 
@@ -48,7 +51,8 @@ export function test() {
       });
 
       it("should return customer", function () {
-        expect(order.getCustomer()).to.equal(customer1);
+        expect(order.getCustomer()).to.equal(customer1,
+          "Order.getCustomer() doesn't return the customer");
       });
     });
 
@@ -59,7 +63,8 @@ export function test() {
       });
 
       it("should return total rate", function () {
-        expect(order.getRate()).to.equal(book1_eur.getRate() + book2_eur.getRate());
+        expect(order.getRate()).to.equal(book1_eur.getRate() + book2_eur.getRate(),
+          "Order.getRate() doesn't return the order total rate");
       });
     });
 
@@ -70,7 +75,8 @@ export function test() {
       });
 
       it("should return currency code", function () {
-        expect(order.getCurrencyCode()).to.equal(book1_eur.getCurrencyCode());
+        expect(order.getCurrencyCode()).to.equal(book1_eur.getCurrencyCode(),
+          "Order.getCurrencyCode() doesn't return the currency code");
       });
     });
 
@@ -81,7 +87,8 @@ export function test() {
       });
 
       it("should return payment id", function () {
-        expect(order.getPaymentId()).to.equal("");
+        expect(order.getPaymentId()).to.equal("",
+        "Order.getPaymentId() doesn't return the payment id");
       });
     });
 
@@ -94,7 +101,8 @@ export function test() {
       it("should set payment id", function () {
         const paymentId = "fake-payment-id";
         order.setPaymentId(paymentId);
-        expect(order.getPaymentId()).to.equal(paymentId);
+        expect(order.getPaymentId()).to.equal(paymentId,
+          "Order.setPaymentId() doesn't set the payment id");
       });
     });
   });

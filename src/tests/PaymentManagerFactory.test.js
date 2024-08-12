@@ -18,7 +18,7 @@ export function test() {
         const paymentManager = PaymentManagerFactory.buildPaymentManager();
 
         expect(paymentManager instanceof PaymentManager,
-          "PaymentManagerFactory.buildPaymentManager() should construct a PaymentManager object").to.be.true;
+          "PaymentManagerFactory.buildPaymentManager() doesn't return PaymentManager object").to.be.true;
       });
     });
 
